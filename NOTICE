@@ -42,3 +42,19 @@ Official nets listing: https://tests.stockfishchess.org/nns
 Official Stockfish release archives already embed the default net. Do not commit
 standalone oversized .nnue files; fetch via the official engine release or networks
 repo when needed.
+
+-------------------------------------------------------------------------------
+Opening book snapshot (opening-book-v1)
+-------------------------------------------------------------------------------
+
+Name: curated subset of lichess-org/chess-openings
+Book id: opening-book-v1
+Pinned commit: 3fd6ce992679e4d991a6bb4dade71f2b826c568a
+License: CC0 1.0 Universal (SPDX: CC0-1.0)
+Upstream: https://github.com/lichess-org/chess-openings
+COPYING: https://github.com/lichess-org/chess-openings/blob/master/COPYING.txt
+Documentation: docs/opening-book-v1.md
+
+The snapshot stores UCI move lines for book-boundary detection only. It is not
+the full upstream TSV dump. Do not expand the snapshot silently; cut a new
+book id for material changes.

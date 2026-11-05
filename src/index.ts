@@ -39,5 +39,29 @@ export {
   type UciPvLine,
 } from "./uci/runner.js"
 
+export {
+  OPENING_BOOK_V1,
+  OPENING_BOOK_V1_LINES,
+  OPENING_BOOK_V1_META,
+  centipawnLoss,
+  extractFeatures,
+  findBookBoundary,
+  getOpeningBook,
+  isTop1Match,
+  isTop3Match,
+  matchRank,
+  scoreToCp,
+  type BookBoundary,
+  type CplFeatures,
+  type ExtractFeaturesOptions,
+  type GameFeatures,
+  type MatchFeatures,
+  type MoveEvalInput,
+  type MoveMultiPvLine,
+  type OpeningBook,
+  type OpeningBookMeta,
+  type TimingFeatures,
+} from "./features/index.js"
+
 export const ANALYZER_PACKAGE_NAME = "@axiomchess/analyzer" as const
 export const ANALYZER_PACKAGE_VERSION = "0.1.0" as const

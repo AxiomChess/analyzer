@@ -1,0 +1,77 @@
+{
+  "id": "amateur-blunders",
+  "description": "Short game with clear blunders; low match rates and high CPL; no book depth",
+  "moves": [
+    {
+      "ply": 1,
+      "side": "white",
+      "playedUci": "e2e4",
+      "lines": [
+        { "multiPv": 1, "moveUci": "e2e4", "score": { "type": "cp", "value": 30 } },
+        { "multiPv": 2, "moveUci": "d2d4", "score": { "type": "cp", "value": 25 } },
+        { "multiPv": 3, "moveUci": "c2c4", "score": { "type": "cp", "value": 20 } }
+      ]
+    },
+    {
+      "ply": 2,
+      "side": "black",
+      "playedUci": "e7e5",
+      "lines": [
+        { "multiPv": 1, "moveUci": "e7e5", "score": { "type": "cp", "value": 25 } },
+        { "multiPv": 2, "moveUci": "c7c5", "score": { "type": "cp", "value": 20 } },
+        { "multiPv": 3, "moveUci": "e7e6", "score": { "type": "cp", "value": 15 } }
+      ]
+    },
+    {
+      "ply": 3,
+      "side": "white",
+      "playedUci": "d1h5",
+      "lines": [
+        { "multiPv": 1, "moveUci": "g1f3", "score": { "type": "cp", "value": 35 } },
+        { "multiPv": 2, "moveUci": "f1c4", "score": { "type": "cp", "value": 30 } },
+        { "multiPv": 3, "moveUci": "b1c3", "score": { "type": "cp", "value": 28 } }
+      ],
+      "playedScore": { "type": "cp", "value": -120 }
+    },
+    {
+      "ply": 4,
+      "side": "black",
+      "playedUci": "b8c6",
+      "lines": [
+        { "multiPv": 1, "moveUci": "b8c6", "score": { "type": "cp", "value": 140 } },
+        { "multiPv": 2, "moveUci": "g8f6", "score": { "type": "cp", "value": 130 } },
+        { "multiPv": 3, "moveUci": "d7d6", "score": { "type": "cp", "value": 80 } }
+      ]
+    },
+    {
+      "ply": 5,
+      "side": "white",
+      "playedUci": "h5f7",
+      "lines": [
+        { "multiPv": 1, "moveUci": "g1f3", "score": { "type": "cp", "value": -100 } },
+        { "multiPv": 2, "moveUci": "f1c4", "score": { "type": "cp", "value": -110 } },
+        { "multiPv": 3, "moveUci": "b1c3", "score": { "type": "cp", "value": -115 } }
+      ],
+      "playedScore": { "type": "cp", "value": -900 }
+    },
+    {
+      "ply": 6,
+      "side": "black",
+      "playedUci": "e8f7",
+      "lines": [
+        { "multiPv": 1, "moveUci": "e8f7", "score": { "type": "cp", "value": 900 } },
+        { "multiPv": 2, "moveUci": "g8e7", "score": { "type": "cp", "value": 200 } },
+        { "multiPv": 3, "moveUci": "d8e7", "score": { "type": "cp", "value": 180 } }
+      ]
+    }
+  ],
+  "expected": {
+    "bookPlyCount": 2,
+    "noveltyPly": 3,
+    "usablePlies": 4,
+    "top1Rate": 0.5,
+    "top3Rate": 0.5,
+    "cplAverage": 238.75,
+    "timingPresent": false
+  }
+}

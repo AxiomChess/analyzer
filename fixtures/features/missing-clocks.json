@@ -1,0 +1,75 @@
+{
+  "id": "missing-clocks",
+  "description": "Same structure as a short middlegame snippet without clocks; timing must be null",
+  "moves": [
+    {
+      "ply": 1,
+      "side": "white",
+      "playedUci": "d2d4",
+      "lines": [
+        { "multiPv": 1, "moveUci": "d2d4", "score": { "type": "cp", "value": 20 } },
+        { "multiPv": 2, "moveUci": "e2e4", "score": { "type": "cp", "value": 18 } },
+        { "multiPv": 3, "moveUci": "c2c4", "score": { "type": "cp", "value": 15 } }
+      ]
+    },
+    {
+      "ply": 2,
+      "side": "black",
+      "playedUci": "d7d5",
+      "lines": [
+        { "multiPv": 1, "moveUci": "d7d5", "score": { "type": "cp", "value": 15 } },
+        { "multiPv": 2, "moveUci": "g8f6", "score": { "type": "cp", "value": 12 } },
+        { "multiPv": 3, "moveUci": "e7e6", "score": { "type": "cp", "value": 10 } }
+      ]
+    },
+    {
+      "ply": 3,
+      "side": "white",
+      "playedUci": "c2c4",
+      "lines": [
+        { "multiPv": 1, "moveUci": "c2c4", "score": { "type": "cp", "value": 25 } },
+        { "multiPv": 2, "moveUci": "g1f3", "score": { "type": "cp", "value": 20 } },
+        { "multiPv": 3, "moveUci": "c1f4", "score": { "type": "cp", "value": 10 } }
+      ]
+    },
+    {
+      "ply": 4,
+      "side": "black",
+      "playedUci": "e7e6",
+      "lines": [
+        { "multiPv": 1, "moveUci": "e7e6", "score": { "type": "cp", "value": 20 } },
+        { "multiPv": 2, "moveUci": "c7c6", "score": { "type": "cp", "value": 18 } },
+        { "multiPv": 3, "moveUci": "g8f6", "score": { "type": "cp", "value": 15 } }
+      ]
+    },
+    {
+      "ply": 5,
+      "side": "white",
+      "playedUci": "b1c3",
+      "lines": [
+        { "multiPv": 1, "moveUci": "g1f3", "score": { "type": "cp", "value": 30 } },
+        { "multiPv": 2, "moveUci": "b1c3", "score": { "type": "cp", "value": 22 } },
+        { "multiPv": 3, "moveUci": "c4d5", "score": { "type": "cp", "value": 15 } }
+      ]
+    },
+    {
+      "ply": 6,
+      "side": "black",
+      "playedUci": "g8f6",
+      "lines": [
+        { "multiPv": 1, "moveUci": "g8f6", "score": { "type": "cp", "value": 18 } },
+        { "multiPv": 2, "moveUci": "f8e7", "score": { "type": "cp", "value": 10 } },
+        { "multiPv": 3, "moveUci": "c7c6", "score": { "type": "cp", "value": 8 } }
+      ]
+    }
+  ],
+  "expected": {
+    "bookPlyCount": 4,
+    "noveltyPly": 5,
+    "usablePlies": 2,
+    "top1Rate": 0.5,
+    "top3Rate": 1,
+    "cplAverage": 4,
+    "timingPresent": false
+  }
+}

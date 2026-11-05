@@ -1,0 +1,87 @@
+{
+  "id": "book-heavy",
+  "description": "Ruy Lopez book path then a quiet novelty; book plies must be excluded from match/CPL",
+  "moves": [
+    {
+      "ply": 1,
+      "side": "white",
+      "playedUci": "e2e4",
+      "lines": [{ "multiPv": 1, "moveUci": "e2e4", "score": { "type": "cp", "value": 25 } }],
+      "clockBeforeSec": 600,
+      "clockAfterSec": 598
+    },
+    {
+      "ply": 2,
+      "side": "black",
+      "playedUci": "e7e5",
+      "lines": [{ "multiPv": 1, "moveUci": "e7e5", "score": { "type": "cp", "value": 20 } }],
+      "clockBeforeSec": 600,
+      "clockAfterSec": 597
+    },
+    {
+      "ply": 3,
+      "side": "white",
+      "playedUci": "g1f3",
+      "lines": [{ "multiPv": 1, "moveUci": "g1f3", "score": { "type": "cp", "value": 30 } }],
+      "clockBeforeSec": 598,
+      "clockAfterSec": 595
+    },
+    {
+      "ply": 4,
+      "side": "black",
+      "playedUci": "b8c6",
+      "lines": [{ "multiPv": 1, "moveUci": "b8c6", "score": { "type": "cp", "value": 25 } }],
+      "clockBeforeSec": 597,
+      "clockAfterSec": 594
+    },
+    {
+      "ply": 5,
+      "side": "white",
+      "playedUci": "f1b5",
+      "lines": [{ "multiPv": 1, "moveUci": "f1b5", "score": { "type": "cp", "value": 35 } }],
+      "clockBeforeSec": 595,
+      "clockAfterSec": 592
+    },
+    {
+      "ply": 6,
+      "side": "black",
+      "playedUci": "a7a6",
+      "lines": [{ "multiPv": 1, "moveUci": "a7a6", "score": { "type": "cp", "value": 30 } }],
+      "clockBeforeSec": 594,
+      "clockAfterSec": 590
+    },
+    {
+      "ply": 7,
+      "side": "white",
+      "playedUci": "b5a4",
+      "lines": [
+        { "multiPv": 1, "moveUci": "b5c6", "score": { "type": "cp", "value": 40 } },
+        { "multiPv": 2, "moveUci": "b5a4", "score": { "type": "cp", "value": 28 } },
+        { "multiPv": 3, "moveUci": "e1g1", "score": { "type": "cp", "value": 10 } }
+      ],
+      "clockBeforeSec": 592,
+      "clockAfterSec": 580
+    },
+    {
+      "ply": 8,
+      "side": "black",
+      "playedUci": "g8f6",
+      "lines": [
+        { "multiPv": 1, "moveUci": "g8f6", "score": { "type": "cp", "value": 15 } },
+        { "multiPv": 2, "moveUci": "d7d6", "score": { "type": "cp", "value": 5 } },
+        { "multiPv": 3, "moveUci": "f7f5", "score": { "type": "cp", "value": -20 } }
+      ],
+      "clockBeforeSec": 590,
+      "clockAfterSec": 575
+    }
+  ],
+  "expected": {
+    "bookPlyCount": 6,
+    "noveltyPly": 7,
+    "usablePlies": 2,
+    "top1Rate": 0.5,
+    "top3Rate": 1,
+    "cplAverage": 6,
+    "timingPresent": true
+  }
+}

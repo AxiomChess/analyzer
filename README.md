@@ -13,9 +13,13 @@ Exports:
 - `ENGINE_V1_POLICY` / `ENGINE_POLICY_ID_V1` -- MultiPV 3, depth 18 (standard) / 16 (bullet)
 - `UciEngineRunner` -- Stockfish UCI process runner (timeouts + crash isolation)
 - `parseUciInfoLine` / `parseUciBestMoveLine` -- UCI line parsers
+- `extractFeatures` -- match rates, CPL, timing (if clocks), opening-book boundary
+- `OPENING_BOOK_V1` / `findBookBoundary` -- CC0 book snapshot from lichess-org/chess-openings
 - `ANALYZER_PACKAGE_NAME` / `ANALYZER_PACKAGE_VERSION`
 
-Feature extraction and calibrated scoring arrive in later roadmap tasks (T13+).
+Calibrated scoring arrives in later roadmap tasks (T14+).
+
+Opening book license and exclusion rules: `docs/opening-book-v1.md`.
 
 ## Stockfish acquisition
 
@@ -54,3 +58,4 @@ Requires Node.js 20+ and pnpm 10+.
 - First-party TypeScript: MIT (`LICENSE`)
 - Stockfish engine when fetched: GPL v3 (`NOTICE`)
 - Official Stockfish NNUE nets: CC0-1.0 (`NOTICE`)
+- Opening book snapshot `opening-book-v1`: CC0-1.0 from lichess-org/chess-openings (`NOTICE`)
