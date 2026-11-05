@@ -1,0 +1,783 @@
+{
+  "id": "A4-missing",
+  "gate": "A4",
+  "description": "Peer game without clocks; timing must be null and uncertainty wider than clocked peer.",
+  "moves": [
+    {
+      "ply": 1,
+      "side": "white",
+      "playedUci": "a2a4",
+      "lines": [
+        {
+          "multiPv": 1,
+          "moveUci": "a2a3",
+          "score": {
+            "type": "cp",
+            "value": 25
+          }
+        },
+        {
+          "multiPv": 2,
+          "moveUci": "a2a4",
+          "score": {
+            "type": "cp",
+            "value": 5
+          }
+        },
+        {
+          "multiPv": 3,
+          "moveUci": "h2h3",
+          "score": {
+            "type": "cp",
+            "value": 0
+          }
+        }
+      ],
+      "playedScore": {
+        "type": "cp",
+        "value": 5
+      }
+    },
+    {
+      "ply": 2,
+      "side": "black",
+      "playedUci": "a7a5",
+      "lines": [
+        {
+          "multiPv": 1,
+          "moveUci": "a7a5",
+          "score": {
+            "type": "cp",
+            "value": 25
+          }
+        },
+        {
+          "multiPv": 2,
+          "moveUci": "a2a3",
+          "score": {
+            "type": "cp",
+            "value": 18
+          }
+        },
+        {
+          "multiPv": 3,
+          "moveUci": "h2h3",
+          "score": {
+            "type": "cp",
+            "value": 0
+          }
+        }
+      ]
+    },
+    {
+      "ply": 3,
+      "side": "white",
+      "playedUci": "b2b4",
+      "lines": [
+        {
+          "multiPv": 1,
+          "moveUci": "b2b4",
+          "score": {
+            "type": "cp",
+            "value": 25
+          }
+        },
+        {
+          "multiPv": 2,
+          "moveUci": "a2a3",
+          "score": {
+            "type": "cp",
+            "value": 18
+          }
+        },
+        {
+          "multiPv": 3,
+          "moveUci": "h2h3",
+          "score": {
+            "type": "cp",
+            "value": 0
+          }
+        }
+      ]
+    },
+    {
+      "ply": 4,
+      "side": "black",
+      "playedUci": "b7b5",
+      "lines": [
+        {
+          "multiPv": 1,
+          "moveUci": "a2a3",
+          "score": {
+            "type": "cp",
+            "value": 25
+          }
+        },
+        {
+          "multiPv": 2,
+          "moveUci": "b7b5",
+          "score": {
+            "type": "cp",
+            "value": 5
+          }
+        },
+        {
+          "multiPv": 3,
+          "moveUci": "h2h3",
+          "score": {
+            "type": "cp",
+            "value": 0
+          }
+        }
+      ],
+      "playedScore": {
+        "type": "cp",
+        "value": 5
+      }
+    },
+    {
+      "ply": 5,
+      "side": "white",
+      "playedUci": "c2c4",
+      "lines": [
+        {
+          "multiPv": 1,
+          "moveUci": "c2c4",
+          "score": {
+            "type": "cp",
+            "value": 25
+          }
+        },
+        {
+          "multiPv": 2,
+          "moveUci": "a2a3",
+          "score": {
+            "type": "cp",
+            "value": 18
+          }
+        },
+        {
+          "multiPv": 3,
+          "moveUci": "h2h3",
+          "score": {
+            "type": "cp",
+            "value": 0
+          }
+        }
+      ]
+    },
+    {
+      "ply": 6,
+      "side": "black",
+      "playedUci": "c7c5",
+      "lines": [
+        {
+          "multiPv": 1,
+          "moveUci": "c7c5",
+          "score": {
+            "type": "cp",
+            "value": 25
+          }
+        },
+        {
+          "multiPv": 2,
+          "moveUci": "a2a3",
+          "score": {
+            "type": "cp",
+            "value": 18
+          }
+        },
+        {
+          "multiPv": 3,
+          "moveUci": "h2h3",
+          "score": {
+            "type": "cp",
+            "value": 0
+          }
+        }
+      ]
+    },
+    {
+      "ply": 7,
+      "side": "white",
+      "playedUci": "d2d4",
+      "lines": [
+        {
+          "multiPv": 1,
+          "moveUci": "a2a3",
+          "score": {
+            "type": "cp",
+            "value": 25
+          }
+        },
+        {
+          "multiPv": 2,
+          "moveUci": "d2d4",
+          "score": {
+            "type": "cp",
+            "value": 5
+          }
+        },
+        {
+          "multiPv": 3,
+          "moveUci": "h2h3",
+          "score": {
+            "type": "cp",
+            "value": 0
+          }
+        }
+      ],
+      "playedScore": {
+        "type": "cp",
+        "value": 5
+      }
+    },
+    {
+      "ply": 8,
+      "side": "black",
+      "playedUci": "d7d5",
+      "lines": [
+        {
+          "multiPv": 1,
+          "moveUci": "d7d5",
+          "score": {
+            "type": "cp",
+            "value": 25
+          }
+        },
+        {
+          "multiPv": 2,
+          "moveUci": "a2a3",
+          "score": {
+            "type": "cp",
+            "value": 18
+          }
+        },
+        {
+          "multiPv": 3,
+          "moveUci": "h2h3",
+          "score": {
+            "type": "cp",
+            "value": 0
+          }
+        }
+      ]
+    },
+    {
+      "ply": 9,
+      "side": "white",
+      "playedUci": "e2e4",
+      "lines": [
+        {
+          "multiPv": 1,
+          "moveUci": "e2e4",
+          "score": {
+            "type": "cp",
+            "value": 25
+          }
+        },
+        {
+          "multiPv": 2,
+          "moveUci": "a2a3",
+          "score": {
+            "type": "cp",
+            "value": 18
+          }
+        },
+        {
+          "multiPv": 3,
+          "moveUci": "h2h3",
+          "score": {
+            "type": "cp",
+            "value": 0
+          }
+        }
+      ]
+    },
+    {
+      "ply": 10,
+      "side": "black",
+      "playedUci": "e7e5",
+      "lines": [
+        {
+          "multiPv": 1,
+          "moveUci": "a2a3",
+          "score": {
+            "type": "cp",
+            "value": 25
+          }
+        },
+        {
+          "multiPv": 2,
+          "moveUci": "e7e5",
+          "score": {
+            "type": "cp",
+            "value": 5
+          }
+        },
+        {
+          "multiPv": 3,
+          "moveUci": "h2h3",
+          "score": {
+            "type": "cp",
+            "value": 0
+          }
+        }
+      ],
+      "playedScore": {
+        "type": "cp",
+        "value": 5
+      }
+    },
+    {
+      "ply": 11,
+      "side": "white",
+      "playedUci": "f2f4",
+      "lines": [
+        {
+          "multiPv": 1,
+          "moveUci": "f2f4",
+          "score": {
+            "type": "cp",
+            "value": 25
+          }
+        },
+        {
+          "multiPv": 2,
+          "moveUci": "a2a3",
+          "score": {
+            "type": "cp",
+            "value": 18
+          }
+        },
+        {
+          "multiPv": 3,
+          "moveUci": "h2h3",
+          "score": {
+            "type": "cp",
+            "value": 0
+          }
+        }
+      ]
+    },
+    {
+      "ply": 12,
+      "side": "black",
+      "playedUci": "f7f5",
+      "lines": [
+        {
+          "multiPv": 1,
+          "moveUci": "f7f5",
+          "score": {
+            "type": "cp",
+            "value": 25
+          }
+        },
+        {
+          "multiPv": 2,
+          "moveUci": "a2a3",
+          "score": {
+            "type": "cp",
+            "value": 18
+          }
+        },
+        {
+          "multiPv": 3,
+          "moveUci": "h2h3",
+          "score": {
+            "type": "cp",
+            "value": 0
+          }
+        }
+      ]
+    },
+    {
+      "ply": 13,
+      "side": "white",
+      "playedUci": "g2g4",
+      "lines": [
+        {
+          "multiPv": 1,
+          "moveUci": "a2a3",
+          "score": {
+            "type": "cp",
+            "value": 25
+          }
+        },
+        {
+          "multiPv": 2,
+          "moveUci": "g2g4",
+          "score": {
+            "type": "cp",
+            "value": 5
+          }
+        },
+        {
+          "multiPv": 3,
+          "moveUci": "h2h3",
+          "score": {
+            "type": "cp",
+            "value": 0
+          }
+        }
+      ],
+      "playedScore": {
+        "type": "cp",
+        "value": 5
+      }
+    },
+    {
+      "ply": 14,
+      "side": "black",
+      "playedUci": "g7g5",
+      "lines": [
+        {
+          "multiPv": 1,
+          "moveUci": "g7g5",
+          "score": {
+            "type": "cp",
+            "value": 25
+          }
+        },
+        {
+          "multiPv": 2,
+          "moveUci": "a2a3",
+          "score": {
+            "type": "cp",
+            "value": 18
+          }
+        },
+        {
+          "multiPv": 3,
+          "moveUci": "h2h3",
+          "score": {
+            "type": "cp",
+            "value": 0
+          }
+        }
+      ]
+    },
+    {
+      "ply": 15,
+      "side": "white",
+      "playedUci": "h2h4",
+      "lines": [
+        {
+          "multiPv": 1,
+          "moveUci": "h2h4",
+          "score": {
+            "type": "cp",
+            "value": 25
+          }
+        },
+        {
+          "multiPv": 2,
+          "moveUci": "a2a3",
+          "score": {
+            "type": "cp",
+            "value": 18
+          }
+        },
+        {
+          "multiPv": 3,
+          "moveUci": "h2h3",
+          "score": {
+            "type": "cp",
+            "value": 0
+          }
+        }
+      ]
+    },
+    {
+      "ply": 16,
+      "side": "black",
+      "playedUci": "h7h5",
+      "lines": [
+        {
+          "multiPv": 1,
+          "moveUci": "a2a3",
+          "score": {
+            "type": "cp",
+            "value": 25
+          }
+        },
+        {
+          "multiPv": 2,
+          "moveUci": "h7h5",
+          "score": {
+            "type": "cp",
+            "value": 5
+          }
+        },
+        {
+          "multiPv": 3,
+          "moveUci": "h2h3",
+          "score": {
+            "type": "cp",
+            "value": 0
+          }
+        }
+      ],
+      "playedScore": {
+        "type": "cp",
+        "value": 5
+      }
+    },
+    {
+      "ply": 17,
+      "side": "white",
+      "playedUci": "a4a5",
+      "lines": [
+        {
+          "multiPv": 1,
+          "moveUci": "a4a5",
+          "score": {
+            "type": "cp",
+            "value": 25
+          }
+        },
+        {
+          "multiPv": 2,
+          "moveUci": "a2a3",
+          "score": {
+            "type": "cp",
+            "value": 18
+          }
+        },
+        {
+          "multiPv": 3,
+          "moveUci": "h2h3",
+          "score": {
+            "type": "cp",
+            "value": 0
+          }
+        }
+      ]
+    },
+    {
+      "ply": 18,
+      "side": "black",
+      "playedUci": "a5a6",
+      "lines": [
+        {
+          "multiPv": 1,
+          "moveUci": "a5a6",
+          "score": {
+            "type": "cp",
+            "value": 25
+          }
+        },
+        {
+          "multiPv": 2,
+          "moveUci": "a2a3",
+          "score": {
+            "type": "cp",
+            "value": 18
+          }
+        },
+        {
+          "multiPv": 3,
+          "moveUci": "h2h3",
+          "score": {
+            "type": "cp",
+            "value": 0
+          }
+        }
+      ]
+    },
+    {
+      "ply": 19,
+      "side": "white",
+      "playedUci": "b4b5",
+      "lines": [
+        {
+          "multiPv": 1,
+          "moveUci": "a2a3",
+          "score": {
+            "type": "cp",
+            "value": 25
+          }
+        },
+        {
+          "multiPv": 2,
+          "moveUci": "b4b5",
+          "score": {
+            "type": "cp",
+            "value": 5
+          }
+        },
+        {
+          "multiPv": 3,
+          "moveUci": "h2h3",
+          "score": {
+            "type": "cp",
+            "value": 0
+          }
+        }
+      ],
+      "playedScore": {
+        "type": "cp",
+        "value": 5
+      }
+    },
+    {
+      "ply": 20,
+      "side": "black",
+      "playedUci": "b5b6",
+      "lines": [
+        {
+          "multiPv": 1,
+          "moveUci": "b5b6",
+          "score": {
+            "type": "cp",
+            "value": 25
+          }
+        },
+        {
+          "multiPv": 2,
+          "moveUci": "a2a3",
+          "score": {
+            "type": "cp",
+            "value": 18
+          }
+        },
+        {
+          "multiPv": 3,
+          "moveUci": "h2h3",
+          "score": {
+            "type": "cp",
+            "value": 0
+          }
+        }
+      ]
+    },
+    {
+      "ply": 21,
+      "side": "white",
+      "playedUci": "c4c5",
+      "lines": [
+        {
+          "multiPv": 1,
+          "moveUci": "c4c5",
+          "score": {
+            "type": "cp",
+            "value": 25
+          }
+        },
+        {
+          "multiPv": 2,
+          "moveUci": "a2a3",
+          "score": {
+            "type": "cp",
+            "value": 18
+          }
+        },
+        {
+          "multiPv": 3,
+          "moveUci": "h2h3",
+          "score": {
+            "type": "cp",
+            "value": 0
+          }
+        }
+      ]
+    },
+    {
+      "ply": 22,
+      "side": "black",
+      "playedUci": "c5c6",
+      "lines": [
+        {
+          "multiPv": 1,
+          "moveUci": "a2a3",
+          "score": {
+            "type": "cp",
+            "value": 25
+          }
+        },
+        {
+          "multiPv": 2,
+          "moveUci": "c5c6",
+          "score": {
+            "type": "cp",
+            "value": 5
+          }
+        },
+        {
+          "multiPv": 3,
+          "moveUci": "h2h3",
+          "score": {
+            "type": "cp",
+            "value": 0
+          }
+        }
+      ],
+      "playedScore": {
+        "type": "cp",
+        "value": 5
+      }
+    },
+    {
+      "ply": 23,
+      "side": "white",
+      "playedUci": "d4d5",
+      "lines": [
+        {
+          "multiPv": 1,
+          "moveUci": "d4d5",
+          "score": {
+            "type": "cp",
+            "value": 25
+          }
+        },
+        {
+          "multiPv": 2,
+          "moveUci": "a2a3",
+          "score": {
+            "type": "cp",
+            "value": 18
+          }
+        },
+        {
+          "multiPv": 3,
+          "moveUci": "h2h3",
+          "score": {
+            "type": "cp",
+            "value": 0
+          }
+        }
+      ]
+    },
+    {
+      "ply": 24,
+      "side": "black",
+      "playedUci": "d5d6",
+      "lines": [
+        {
+          "multiPv": 1,
+          "moveUci": "d5d6",
+          "score": {
+            "type": "cp",
+            "value": 25
+          }
+        },
+        {
+          "multiPv": 2,
+          "moveUci": "a2a3",
+          "score": {
+            "type": "cp",
+            "value": 18
+          }
+        },
+        {
+          "multiPv": 3,
+          "moveUci": "h2h3",
+          "score": {
+            "type": "cp",
+            "value": 0
+          }
+        }
+      ]
+    }
+  ]
+}

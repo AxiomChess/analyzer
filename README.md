@@ -15,11 +15,13 @@ Exports:
 - `parseUciInfoLine` / `parseUciBestMoveLine` -- UCI line parsers
 - `extractFeatures` -- match rates, CPL, timing (if clocks), opening-book boundary
 - `OPENING_BOOK_V1` / `findBookBoundary` -- CC0 book snapshot from lichess-org/chess-openings
+- `calibrateSuspicion` / `CALIBRATION_V1` -- calibrated suspicion score, uncertainty, bands
 - `ANALYZER_PACKAGE_NAME` / `ANALYZER_PACKAGE_VERSION`
 
-Calibrated scoring arrives in later roadmap tasks (T14+).
-
+Calibration freeze and formula: `docs/calibration-v1.md`.
 Opening book license and exclusion rules: `docs/opening-book-v1.md`.
+
+Suspicion bands are only `low`, `elevated`, `high`, `inconclusive` -- never `cheater`.
 
 ## Stockfish acquisition
 

@@ -1,0 +1,799 @@
+{
+  "id": "A2",
+  "gate": "A2",
+  "description": "Synthetic engine-like MultiPV sequence (license-clean recorded fixture; not a live site fetch). High top-1 rate, low CPL, usablePlies >= 20.",
+  "moves": [
+    {
+      "ply": 1,
+      "side": "white",
+      "playedUci": "a2a3",
+      "lines": [
+        {
+          "multiPv": 1,
+          "moveUci": "a2a3",
+          "score": {
+            "type": "cp",
+            "value": 15
+          }
+        },
+        {
+          "multiPv": 2,
+          "moveUci": "a2a3",
+          "score": {
+            "type": "cp",
+            "value": 10
+          }
+        },
+        {
+          "multiPv": 3,
+          "moveUci": "h2h3",
+          "score": {
+            "type": "cp",
+            "value": 7
+          }
+        }
+      ],
+      "clockBeforeSec": 600,
+      "clockAfterSec": 599
+    },
+    {
+      "ply": 2,
+      "side": "black",
+      "playedUci": "a7a6",
+      "lines": [
+        {
+          "multiPv": 1,
+          "moveUci": "a7a6",
+          "score": {
+            "type": "cp",
+            "value": 15
+          }
+        },
+        {
+          "multiPv": 2,
+          "moveUci": "a2a3",
+          "score": {
+            "type": "cp",
+            "value": 10
+          }
+        },
+        {
+          "multiPv": 3,
+          "moveUci": "h2h3",
+          "score": {
+            "type": "cp",
+            "value": 7
+          }
+        }
+      ],
+      "clockBeforeSec": 599,
+      "clockAfterSec": 598
+    },
+    {
+      "ply": 3,
+      "side": "white",
+      "playedUci": "b2b3",
+      "lines": [
+        {
+          "multiPv": 1,
+          "moveUci": "b2b3",
+          "score": {
+            "type": "cp",
+            "value": 15
+          }
+        },
+        {
+          "multiPv": 2,
+          "moveUci": "a2a3",
+          "score": {
+            "type": "cp",
+            "value": 10
+          }
+        },
+        {
+          "multiPv": 3,
+          "moveUci": "h2h3",
+          "score": {
+            "type": "cp",
+            "value": 7
+          }
+        }
+      ],
+      "clockBeforeSec": 598,
+      "clockAfterSec": 597
+    },
+    {
+      "ply": 4,
+      "side": "black",
+      "playedUci": "b7b6",
+      "lines": [
+        {
+          "multiPv": 1,
+          "moveUci": "b7b6",
+          "score": {
+            "type": "cp",
+            "value": 15
+          }
+        },
+        {
+          "multiPv": 2,
+          "moveUci": "a2a3",
+          "score": {
+            "type": "cp",
+            "value": 10
+          }
+        },
+        {
+          "multiPv": 3,
+          "moveUci": "h2h3",
+          "score": {
+            "type": "cp",
+            "value": 7
+          }
+        }
+      ],
+      "clockBeforeSec": 597,
+      "clockAfterSec": 596
+    },
+    {
+      "ply": 5,
+      "side": "white",
+      "playedUci": "c2c3",
+      "lines": [
+        {
+          "multiPv": 1,
+          "moveUci": "c2c3",
+          "score": {
+            "type": "cp",
+            "value": 15
+          }
+        },
+        {
+          "multiPv": 2,
+          "moveUci": "a2a3",
+          "score": {
+            "type": "cp",
+            "value": 10
+          }
+        },
+        {
+          "multiPv": 3,
+          "moveUci": "h2h3",
+          "score": {
+            "type": "cp",
+            "value": 7
+          }
+        }
+      ],
+      "clockBeforeSec": 596,
+      "clockAfterSec": 595
+    },
+    {
+      "ply": 6,
+      "side": "black",
+      "playedUci": "c7c6",
+      "lines": [
+        {
+          "multiPv": 1,
+          "moveUci": "c7c6",
+          "score": {
+            "type": "cp",
+            "value": 15
+          }
+        },
+        {
+          "multiPv": 2,
+          "moveUci": "a2a3",
+          "score": {
+            "type": "cp",
+            "value": 10
+          }
+        },
+        {
+          "multiPv": 3,
+          "moveUci": "h2h3",
+          "score": {
+            "type": "cp",
+            "value": 7
+          }
+        }
+      ],
+      "clockBeforeSec": 595,
+      "clockAfterSec": 594
+    },
+    {
+      "ply": 7,
+      "side": "white",
+      "playedUci": "d2d3",
+      "lines": [
+        {
+          "multiPv": 1,
+          "moveUci": "d2d3",
+          "score": {
+            "type": "cp",
+            "value": 15
+          }
+        },
+        {
+          "multiPv": 2,
+          "moveUci": "a2a3",
+          "score": {
+            "type": "cp",
+            "value": 10
+          }
+        },
+        {
+          "multiPv": 3,
+          "moveUci": "h2h3",
+          "score": {
+            "type": "cp",
+            "value": 7
+          }
+        }
+      ],
+      "clockBeforeSec": 594,
+      "clockAfterSec": 593
+    },
+    {
+      "ply": 8,
+      "side": "black",
+      "playedUci": "d7d6",
+      "lines": [
+        {
+          "multiPv": 1,
+          "moveUci": "d7d6",
+          "score": {
+            "type": "cp",
+            "value": 15
+          }
+        },
+        {
+          "multiPv": 2,
+          "moveUci": "a2a3",
+          "score": {
+            "type": "cp",
+            "value": 10
+          }
+        },
+        {
+          "multiPv": 3,
+          "moveUci": "h2h3",
+          "score": {
+            "type": "cp",
+            "value": 7
+          }
+        }
+      ],
+      "clockBeforeSec": 593,
+      "clockAfterSec": 592
+    },
+    {
+      "ply": 9,
+      "side": "white",
+      "playedUci": "e2e3",
+      "lines": [
+        {
+          "multiPv": 1,
+          "moveUci": "e2e3",
+          "score": {
+            "type": "cp",
+            "value": 15
+          }
+        },
+        {
+          "multiPv": 2,
+          "moveUci": "a2a3",
+          "score": {
+            "type": "cp",
+            "value": 10
+          }
+        },
+        {
+          "multiPv": 3,
+          "moveUci": "h2h3",
+          "score": {
+            "type": "cp",
+            "value": 7
+          }
+        }
+      ],
+      "clockBeforeSec": 592,
+      "clockAfterSec": 591
+    },
+    {
+      "ply": 10,
+      "side": "black",
+      "playedUci": "e7e6",
+      "lines": [
+        {
+          "multiPv": 1,
+          "moveUci": "e7e6",
+          "score": {
+            "type": "cp",
+            "value": 15
+          }
+        },
+        {
+          "multiPv": 2,
+          "moveUci": "a2a3",
+          "score": {
+            "type": "cp",
+            "value": 10
+          }
+        },
+        {
+          "multiPv": 3,
+          "moveUci": "h2h3",
+          "score": {
+            "type": "cp",
+            "value": 7
+          }
+        }
+      ],
+      "clockBeforeSec": 591,
+      "clockAfterSec": 590
+    },
+    {
+      "ply": 11,
+      "side": "white",
+      "playedUci": "f2f3",
+      "lines": [
+        {
+          "multiPv": 1,
+          "moveUci": "f2f3",
+          "score": {
+            "type": "cp",
+            "value": 15
+          }
+        },
+        {
+          "multiPv": 2,
+          "moveUci": "a2a3",
+          "score": {
+            "type": "cp",
+            "value": 10
+          }
+        },
+        {
+          "multiPv": 3,
+          "moveUci": "h2h3",
+          "score": {
+            "type": "cp",
+            "value": 7
+          }
+        }
+      ],
+      "clockBeforeSec": 590,
+      "clockAfterSec": 589
+    },
+    {
+      "ply": 12,
+      "side": "black",
+      "playedUci": "f7f6",
+      "lines": [
+        {
+          "multiPv": 1,
+          "moveUci": "f7f6",
+          "score": {
+            "type": "cp",
+            "value": 15
+          }
+        },
+        {
+          "multiPv": 2,
+          "moveUci": "a2a3",
+          "score": {
+            "type": "cp",
+            "value": 10
+          }
+        },
+        {
+          "multiPv": 3,
+          "moveUci": "h2h3",
+          "score": {
+            "type": "cp",
+            "value": 7
+          }
+        }
+      ],
+      "clockBeforeSec": 589,
+      "clockAfterSec": 588
+    },
+    {
+      "ply": 13,
+      "side": "white",
+      "playedUci": "g2g3",
+      "lines": [
+        {
+          "multiPv": 1,
+          "moveUci": "g2g3",
+          "score": {
+            "type": "cp",
+            "value": 15
+          }
+        },
+        {
+          "multiPv": 2,
+          "moveUci": "a2a3",
+          "score": {
+            "type": "cp",
+            "value": 10
+          }
+        },
+        {
+          "multiPv": 3,
+          "moveUci": "h2h3",
+          "score": {
+            "type": "cp",
+            "value": 7
+          }
+        }
+      ],
+      "clockBeforeSec": 588,
+      "clockAfterSec": 587
+    },
+    {
+      "ply": 14,
+      "side": "black",
+      "playedUci": "g7g6",
+      "lines": [
+        {
+          "multiPv": 1,
+          "moveUci": "g7g6",
+          "score": {
+            "type": "cp",
+            "value": 15
+          }
+        },
+        {
+          "multiPv": 2,
+          "moveUci": "a2a3",
+          "score": {
+            "type": "cp",
+            "value": 10
+          }
+        },
+        {
+          "multiPv": 3,
+          "moveUci": "h2h3",
+          "score": {
+            "type": "cp",
+            "value": 7
+          }
+        }
+      ],
+      "clockBeforeSec": 587,
+      "clockAfterSec": 586
+    },
+    {
+      "ply": 15,
+      "side": "white",
+      "playedUci": "h2h3",
+      "lines": [
+        {
+          "multiPv": 1,
+          "moveUci": "h2h3",
+          "score": {
+            "type": "cp",
+            "value": 15
+          }
+        },
+        {
+          "multiPv": 2,
+          "moveUci": "a2a3",
+          "score": {
+            "type": "cp",
+            "value": 10
+          }
+        },
+        {
+          "multiPv": 3,
+          "moveUci": "h2h3",
+          "score": {
+            "type": "cp",
+            "value": 7
+          }
+        }
+      ],
+      "clockBeforeSec": 586,
+      "clockAfterSec": 585
+    },
+    {
+      "ply": 16,
+      "side": "black",
+      "playedUci": "h7h6",
+      "lines": [
+        {
+          "multiPv": 1,
+          "moveUci": "h7h6",
+          "score": {
+            "type": "cp",
+            "value": 15
+          }
+        },
+        {
+          "multiPv": 2,
+          "moveUci": "a2a3",
+          "score": {
+            "type": "cp",
+            "value": 10
+          }
+        },
+        {
+          "multiPv": 3,
+          "moveUci": "h2h3",
+          "score": {
+            "type": "cp",
+            "value": 7
+          }
+        }
+      ],
+      "clockBeforeSec": 585,
+      "clockAfterSec": 584
+    },
+    {
+      "ply": 17,
+      "side": "white",
+      "playedUci": "a3a4",
+      "lines": [
+        {
+          "multiPv": 1,
+          "moveUci": "a3a4",
+          "score": {
+            "type": "cp",
+            "value": 15
+          }
+        },
+        {
+          "multiPv": 2,
+          "moveUci": "a2a3",
+          "score": {
+            "type": "cp",
+            "value": 10
+          }
+        },
+        {
+          "multiPv": 3,
+          "moveUci": "h2h3",
+          "score": {
+            "type": "cp",
+            "value": 7
+          }
+        }
+      ],
+      "clockBeforeSec": 584,
+      "clockAfterSec": 583
+    },
+    {
+      "ply": 18,
+      "side": "black",
+      "playedUci": "a6a5",
+      "lines": [
+        {
+          "multiPv": 1,
+          "moveUci": "a6a5",
+          "score": {
+            "type": "cp",
+            "value": 15
+          }
+        },
+        {
+          "multiPv": 2,
+          "moveUci": "a2a3",
+          "score": {
+            "type": "cp",
+            "value": 10
+          }
+        },
+        {
+          "multiPv": 3,
+          "moveUci": "h2h3",
+          "score": {
+            "type": "cp",
+            "value": 7
+          }
+        }
+      ],
+      "clockBeforeSec": 583,
+      "clockAfterSec": 582
+    },
+    {
+      "ply": 19,
+      "side": "white",
+      "playedUci": "b3b4",
+      "lines": [
+        {
+          "multiPv": 1,
+          "moveUci": "b3b4",
+          "score": {
+            "type": "cp",
+            "value": 15
+          }
+        },
+        {
+          "multiPv": 2,
+          "moveUci": "a2a3",
+          "score": {
+            "type": "cp",
+            "value": 10
+          }
+        },
+        {
+          "multiPv": 3,
+          "moveUci": "h2h3",
+          "score": {
+            "type": "cp",
+            "value": 7
+          }
+        }
+      ],
+      "clockBeforeSec": 582,
+      "clockAfterSec": 581
+    },
+    {
+      "ply": 20,
+      "side": "black",
+      "playedUci": "b6b5",
+      "lines": [
+        {
+          "multiPv": 1,
+          "moveUci": "b6b5",
+          "score": {
+            "type": "cp",
+            "value": 15
+          }
+        },
+        {
+          "multiPv": 2,
+          "moveUci": "a2a3",
+          "score": {
+            "type": "cp",
+            "value": 10
+          }
+        },
+        {
+          "multiPv": 3,
+          "moveUci": "h2h3",
+          "score": {
+            "type": "cp",
+            "value": 7
+          }
+        }
+      ],
+      "clockBeforeSec": 581,
+      "clockAfterSec": 580
+    },
+    {
+      "ply": 21,
+      "side": "white",
+      "playedUci": "c3c4",
+      "lines": [
+        {
+          "multiPv": 1,
+          "moveUci": "c3c4",
+          "score": {
+            "type": "cp",
+            "value": 15
+          }
+        },
+        {
+          "multiPv": 2,
+          "moveUci": "a2a3",
+          "score": {
+            "type": "cp",
+            "value": 10
+          }
+        },
+        {
+          "multiPv": 3,
+          "moveUci": "h2h3",
+          "score": {
+            "type": "cp",
+            "value": 7
+          }
+        }
+      ],
+      "clockBeforeSec": 580,
+      "clockAfterSec": 579
+    },
+    {
+      "ply": 22,
+      "side": "black",
+      "playedUci": "c6c5",
+      "lines": [
+        {
+          "multiPv": 1,
+          "moveUci": "c6c5",
+          "score": {
+            "type": "cp",
+            "value": 15
+          }
+        },
+        {
+          "multiPv": 2,
+          "moveUci": "a2a3",
+          "score": {
+            "type": "cp",
+            "value": 10
+          }
+        },
+        {
+          "multiPv": 3,
+          "moveUci": "h2h3",
+          "score": {
+            "type": "cp",
+            "value": 7
+          }
+        }
+      ],
+      "clockBeforeSec": 579,
+      "clockAfterSec": 578
+    },
+    {
+      "ply": 23,
+      "side": "white",
+      "playedUci": "d3d4",
+      "lines": [
+        {
+          "multiPv": 1,
+          "moveUci": "d3d4",
+          "score": {
+            "type": "cp",
+            "value": 15
+          }
+        },
+        {
+          "multiPv": 2,
+          "moveUci": "a2a3",
+          "score": {
+            "type": "cp",
+            "value": 10
+          }
+        },
+        {
+          "multiPv": 3,
+          "moveUci": "h2h3",
+          "score": {
+            "type": "cp",
+            "value": 7
+          }
+        }
+      ],
+      "clockBeforeSec": 578,
+      "clockAfterSec": 577
+    },
+    {
+      "ply": 24,
+      "side": "black",
+      "playedUci": "d6d5",
+      "lines": [
+        {
+          "multiPv": 1,
+          "moveUci": "d6d5",
+          "score": {
+            "type": "cp",
+            "value": 15
+          }
+        },
+        {
+          "multiPv": 2,
+          "moveUci": "a2a3",
+          "score": {
+            "type": "cp",
+            "value": 10
+          }
+        },
+        {
+          "multiPv": 3,
+          "moveUci": "h2h3",
+          "score": {
+            "type": "cp",
+            "value": 7
+          }
+        }
+      ],
+      "clockBeforeSec": 577,
+      "clockAfterSec": 576
+    }
+  ]
+}

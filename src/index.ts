@@ -63,5 +63,15 @@ export {
   type TimingFeatures,
 } from "./features/index.js"
 
+export {
+  CALIBRATION_POLICY_ID_V1,
+  CALIBRATION_V1,
+  calibrateSuspicion,
+  type CalibratedSuspicion,
+  type CalibrationV1Constants,
+  type SuspicionBand,
+  type SuspicionUncertainty,
+} from "./calibration/index.js"
+
 export const ANALYZER_PACKAGE_NAME = "@axiomchess/analyzer" as const
 export const ANALYZER_PACKAGE_VERSION = "0.1.0" as const
