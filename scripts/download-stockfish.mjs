@@ -69,16 +69,30 @@ const fetchToFile = async (url, destPath) => {
   await pipeline(response.body, createWriteStream(destPath))
 }
 
-const findBinary = async (dir, name) => {
+const isReleaseBinary = (fileName, platform) => {
+  if (platform.startsWith("windows")) {
+    return (
+      fileName.startsWith("stockfish") &&
+      fileName.endsWith(".exe") &&
+      !fileName.includes("source")
+    )
+  }
+  return fileName.startsWith("stockfish") && !fileName.includes(".")
+}
+
+const findBinary = async (dir, platform) => {
   const entries = await readdir(dir, { withFileTypes: true })
   for (const entry of entries) {
     const full = join(dir, entry.name)
     if (entry.isDirectory()) {
-      const nested = await findBinary(full, name)
+      if (entry.name === "src" || entry.name === "scripts" || entry.name === "wiki") {
+        continue
+      }
+      const nested = await findBinary(full, platform)
       if (nested) return nested
       continue
     }
-    if (entry.isFile() && entry.name === name) return full
+    if (entry.isFile() && isReleaseBinary(entry.name, platform)) return full
   }
   return null
 }
@@ -112,9 +126,11 @@ const main = async () => {
     await fetchToFile(url, archivePath)
     await extractArchive(archivePath, work, platform)
 
-    const found = await findBinary(work, outBinary)
+    const found = await findBinary(work, platform)
     if (!found) {
-      throw new Error(`Extracted archive did not contain ${outBinary}`)
+      throw new Error(
+        `Extracted archive did not contain a Stockfish binary (expected pattern for ${platform})`,
+      )
     }
 
     const destBinary = join(VENDOR, outBinary)

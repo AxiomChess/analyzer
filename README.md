@@ -6,13 +6,16 @@ Stockfish workers, feature extraction, calibrated scoring library, and analysis 
 
 `@axiomchess/analyzer` is a TypeScript library/worker scaffold.
 
-Bootstrap exports:
+Exports:
 
 - `STOCKFISH_ENGINE_PIN` -- pinned Stockfish 19 (`sf_19`) acquisition metadata
 - `STOCKFISH_RELEASE_ASSETS` / `stockfishBinaryName` -- official release asset map
+- `ENGINE_V1_POLICY` / `ENGINE_POLICY_ID_V1` -- MultiPV 3, depth 18 (standard) / 16 (bullet)
+- `UciEngineRunner` -- Stockfish UCI process runner (timeouts + crash isolation)
+- `parseUciInfoLine` / `parseUciBestMoveLine` -- UCI line parsers
 - `ANALYZER_PACKAGE_NAME` / `ANALYZER_PACKAGE_VERSION`
 
-UCI runner, features, and scoring arrive in later roadmap tasks (T12+).
+Feature extraction and calibrated scoring arrive in later roadmap tasks (T13+).
 
 ## Stockfish acquisition
 
@@ -33,11 +36,16 @@ Verified sources: https://stockfishchess.org/about/ , https://github.com/officia
 
 ```sh
 pnpm install
+pnpm engine:download
 pnpm lint
 pnpm test
 pnpm build
-pnpm engine:download
 ```
+
+Optional: set `AXIOMCHESS_STOCKFISH_PATH` to an absolute Stockfish binary path.
+
+Without a binary, unit/parser tests still run; live UCI integration tests are skip-gated.
+CI job `engine` downloads the pinned release and runs the full suite.
 
 Requires Node.js 20+ and pnpm 10+.
 
