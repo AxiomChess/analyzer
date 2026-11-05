@@ -6,10 +6,34 @@ on:
   pull_request:
 
 jobs:
-  stub:
+  check:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: CI stub
-        run: echo "CI stub; product checks land in later tasks"
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.29.3
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "pnpm"
+      - name: Install
+        run: pnpm install --frozen-lockfile
+      - name: Lint
+        run: pnpm lint
+      - name: Test
+        run: pnpm test
+      - name: Build
+        run: pnpm build
+      - name: Verify NOTICE and engine pin files
+        run: |
+          test -f NOTICE
+          test -f LICENSE
+          test -f scripts/download-stockfish.mjs
+          grep -q "GPL" NOTICE
+          grep -q "CC0" NOTICE
+          grep -q "sf_19" NOTICE
+          grep -q "nn-1a298aa575a0.nnue" NOTICE

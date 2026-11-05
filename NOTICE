@@ -1,0 +1,44 @@
+AxiomChess analyzer -- third-party notices
+==========================================
+
+This repository's first-party TypeScript is MIT-licensed (see LICENSE).
+
+-------------------------------------------------------------------------------
+Stockfish chess engine (not committed as a binary in this repository)
+-------------------------------------------------------------------------------
+
+Name: Stockfish
+Pinned version: 19
+Release tag: sf_19
+License: GNU General Public License v3 (GPL-3.0-or-later) as published upstream
+About / GPL summary: https://stockfishchess.org/about/
+Source tree for the exact pin: https://github.com/official-stockfish/Stockfish/tree/sf_19
+License text: https://raw.githubusercontent.com/official-stockfish/Stockfish/sf_19/Copying.txt
+Official downloads: https://stockfishchess.org/download/
+GitHub release assets: https://github.com/official-stockfish/Stockfish/releases/tag/sf_19
+
+Acquisition: run `pnpm engine:download` (scripts/download-stockfish.mjs). The script
+fetches the official release archive for the host platform into vendor/stockfish/
+and copies Copying.txt beside the binary. vendor/stockfish/ is gitignored because
+release archives are large (~75+ MB).
+
+GPL redistribution reminder (from stockfishchess.org/about/): whenever Stockfish is
+distributed, include the full source code or a pointer to where the source code can
+be found to generate the exact binary being distributed. This NOTICE is that pointer
+for pin sf_19. Do not redistribute a modified binary without offering corresponding
+source under the GPL.
+
+-------------------------------------------------------------------------------
+Stockfish NNUE evaluation networks
+-------------------------------------------------------------------------------
+
+Default net for Stockfish 19 (EvalFileDefaultName in sf_19 src/evaluate.h):
+  nn-1a298aa575a0.nnue
+
+License: CC0 1.0 Universal (SPDX: CC0-1.0)
+Networks repository: https://github.com/official-stockfish/networks
+Official nets listing: https://tests.stockfishchess.org/nns
+
+Official Stockfish release archives already embed the default net. Do not commit
+standalone oversized .nnue files; fetch via the official engine release or networks
+repo when needed.

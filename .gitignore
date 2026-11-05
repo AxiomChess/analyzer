@@ -26,3 +26,7 @@ Thumbs.db
 # Engine temporary files
 *.nnue.tmp
 engine-tmp/
+
+# Downloaded Stockfish binary + nets (fetch via pnpm engine:download)
+vendor/stockfish/
+*.nnue
