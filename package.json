@@ -15,10 +15,12 @@
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
-    }
+    },
+    "./schemas/analysis-result-v1.json": "./schemas/analysis-result-v1.json"
   },
   "files": [
     "dist",
+    "schemas",
     "NOTICE",
     "LICENSE"
   ],

@@ -1,0 +1,178 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://axiomchess.github.io/schemas/analysis-result-v1.json",
+  "title": "AnalysisResultV1",
+  "description": "Stable machine output for AxiomChess analysis (PROJECT_SPEC section 7.6). Bands are informational only; never a cheater label.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "analyzedAt",
+    "engine",
+    "calibrationPolicyId",
+    "features",
+    "suspicion",
+    "methodologyNote",
+    "falsePositiveWarning",
+    "featuresUsed",
+    "sampleSizeCaveats"
+  ],
+  "properties": {
+    "version": {
+      "type": "string",
+      "const": "v1",
+      "description": "Required schema version field for AnalysisResultV1."
+    },
+    "analyzedAt": {
+      "type": "string",
+      "minLength": 1,
+      "description": "ISO-8601 timestamp when analysis completed."
+    },
+    "engine": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["policyId", "multiPv", "depth", "threads", "hashMb"],
+      "properties": {
+        "policyId": { "type": "string", "const": "engine-v1" },
+        "multiPv": { "type": "integer", "const": 3 },
+        "depth": { "type": "integer", "minimum": 1 },
+        "threads": { "type": "integer", "minimum": 1 },
+        "hashMb": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "calibrationPolicyId": {
+      "type": "string",
+      "const": "calibration-v1"
+    },
+    "features": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["book", "match", "cpl", "timing"],
+      "properties": {
+        "book": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["bookId", "bookPlyCount", "noveltyPly"],
+          "properties": {
+            "bookId": { "type": "string", "minLength": 1 },
+            "bookPlyCount": { "type": "integer", "minimum": 0 },
+            "noveltyPly": {
+              "anyOf": [
+                { "type": "integer", "minimum": 1 },
+                { "type": "null" }
+              ]
+            }
+          }
+        },
+        "match": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "top1Rate",
+            "top3Rate",
+            "top1RateWhite",
+            "top1RateBlack",
+            "top3RateWhite",
+            "top3RateBlack",
+            "usablePlies",
+            "usablePliesWhite",
+            "usablePliesBlack"
+          ],
+          "properties": {
+            "top1Rate": { "type": "number", "minimum": 0, "maximum": 1 },
+            "top3Rate": { "type": "number", "minimum": 0, "maximum": 1 },
+            "top1RateWhite": { "type": "number", "minimum": 0, "maximum": 1 },
+            "top1RateBlack": { "type": "number", "minimum": 0, "maximum": 1 },
+            "top3RateWhite": { "type": "number", "minimum": 0, "maximum": 1 },
+            "top3RateBlack": { "type": "number", "minimum": 0, "maximum": 1 },
+            "usablePlies": { "type": "integer", "minimum": 0 },
+            "usablePliesWhite": { "type": "integer", "minimum": 0 },
+            "usablePliesBlack": { "type": "integer", "minimum": 0 }
+          }
+        },
+        "cpl": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "average",
+            "median",
+            "p90",
+            "averageWhite",
+            "averageBlack",
+            "values"
+          ],
+          "properties": {
+            "average": { "type": "number", "minimum": 0 },
+            "median": { "type": "number", "minimum": 0 },
+            "p90": { "type": "number", "minimum": 0 },
+            "averageWhite": { "type": "number", "minimum": 0 },
+            "averageBlack": { "type": "number", "minimum": 0 },
+            "values": {
+              "type": "array",
+              "items": { "type": "number", "minimum": 0 }
+            }
+          }
+        },
+        "timing": {
+          "anyOf": [
+            { "type": "null" },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "meanMoveTimeSec",
+                "medianMoveTimeSec",
+                "fastHighMatchStreakMax",
+                "fastMoveThresholdSec",
+                "moveTimesSec"
+              ],
+              "properties": {
+                "meanMoveTimeSec": { "type": "number", "minimum": 0 },
+                "medianMoveTimeSec": { "type": "number", "minimum": 0 },
+                "fastHighMatchStreakMax": { "type": "integer", "minimum": 0 },
+                "fastMoveThresholdSec": { "type": "number", "minimum": 0 },
+                "moveTimesSec": {
+                  "type": "array",
+                  "items": { "type": "number", "minimum": 0 }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "suspicion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["score", "uncertainty", "band"],
+      "properties": {
+        "score": { "type": "number", "minimum": 0, "maximum": 1 },
+        "uncertainty": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["low", "high", "halfWidth"],
+          "properties": {
+            "low": { "type": "number", "minimum": 0, "maximum": 1 },
+            "high": { "type": "number", "minimum": 0, "maximum": 1 },
+            "halfWidth": { "type": "number", "minimum": 0, "maximum": 0.5 }
+          }
+        },
+        "band": {
+          "type": "string",
+          "enum": ["low", "elevated", "high", "inconclusive"]
+        }
+      }
+    },
+    "methodologyNote": { "type": "string", "minLength": 1 },
+    "falsePositiveWarning": { "type": "string", "minLength": 1 },
+    "featuresUsed": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "minItems": 1
+    },
+    "sampleSizeCaveats": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}

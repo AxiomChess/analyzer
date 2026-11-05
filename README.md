@@ -16,6 +16,9 @@ Exports:
 - `extractFeatures` -- match rates, CPL, timing (if clocks), opening-book boundary
 - `OPENING_BOOK_V1` / `findBookBoundary` -- CC0 book snapshot from lichess-org/chess-openings
 - `calibrateSuspicion` / `CALIBRATION_V1` -- calibrated suspicion score, uncertainty, bands
+- `buildAnalysisResultV1` / `parseAnalysisResultV1` / `serializeAnalysisResultV1` -- stable `AnalysisResultV1` library API
+- `ANALYSIS_RESULT_VERSION_V1` (`"v1"`) -- required version field
+- JSON Schema: `schemas/analysis-result-v1.json` (package export `./schemas/analysis-result-v1.json`)
 - `ANALYZER_PACKAGE_NAME` / `ANALYZER_PACKAGE_VERSION`
 
 Calibration freeze and formula: `docs/calibration-v1.md`.
