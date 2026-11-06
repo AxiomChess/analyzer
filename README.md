@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/AxiomChess/design/main/assets/brand/banner.svg" alt="AxiomChess" width="880" />
+</p>
+
 # analyzer
 
 Stockfish workers, feature extraction, calibrated scoring library, and analysis JSON schema for AxiomChess.
@@ -57,6 +61,10 @@ Without a binary, unit/parser tests still run; live UCI integration tests are sk
 CI job `engine` downloads the pinned release and runs the full suite.
 
 Requires Node.js 20+ and pnpm 10+.
+
+## Docs
+
+https://axiomchess.github.io/docs/
 
 ## License
 
