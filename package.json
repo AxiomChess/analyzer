@@ -20,7 +20,10 @@
   },
   "files": [
     "dist",
+    "src",
     "schemas",
+    "tsconfig.json",
+    "tsconfig.build.json",
     "NOTICE",
     "LICENSE"
   ],
