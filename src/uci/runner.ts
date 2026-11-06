@@ -2,6 +2,15 @@ import { spawn, type ChildProcessWithoutNullStreams } from "node:child_process"
 import { createInterface, type Interface } from "node:readline"
 
 import {
+  rootLogger,
+  type StructuredLogger,
+} from "../observability/logger.js"
+import {
+  METRIC_NAMES,
+  rootMetrics,
+  type MetricsRegistry,
+} from "../observability/metrics.js"
+import {
   ENGINE_V1_POLICY,
   depthForTimeControl,
   type EngineTimeControlClass,
@@ -71,6 +80,9 @@ export type UciEngineRunnerOptions = {
   readonly searchTimeoutMs?: number
   /** Handshake timeout for uci / isready. */
   readonly readyTimeoutMs?: number
+  readonly logger?: StructuredLogger
+  readonly metrics?: MetricsRegistry
+  readonly requestId?: string
 }
 
 type PendingWait = {
@@ -95,6 +107,9 @@ export class UciEngineRunner {
   #searchTimeoutMs: number
   #readyTimeoutMs: number
   #writeChain: Promise<void> = Promise.resolve()
+  #logger: StructuredLogger
+  #metrics: MetricsRegistry
+  #requestId: string | undefined
 
   private constructor(
     child: ChildProcessWithoutNullStreams,
@@ -102,12 +117,18 @@ export class UciEngineRunner {
     policy: EngineV1Policy,
     searchTimeoutMs: number,
     readyTimeoutMs: number,
+    logger: StructuredLogger,
+    metrics: MetricsRegistry,
+    requestId: string | undefined,
   ) {
     this.#child = child
     this.binaryPath = binaryPath
     this.policy = policy
     this.#searchTimeoutMs = searchTimeoutMs
     this.#readyTimeoutMs = readyTimeoutMs
+    this.#logger = logger
+    this.#metrics = metrics
+    this.#requestId = requestId
     this.#readline = createInterface({ input: child.stdout })
 
     this.#readline.on("line", (line) => {
@@ -151,6 +172,9 @@ export class UciEngineRunner {
       policy,
       searchTimeoutMs,
       readyTimeoutMs,
+      options.logger ?? rootLogger,
+      options.metrics ?? rootMetrics,
+      options.requestId,
     )
 
     try {
@@ -177,94 +201,127 @@ export class UciEngineRunner {
       throw new EngineCrashError("Engine runner is closed")
     }
 
+    const started = Date.now()
     const depth =
       input.depth ??
       depthForTimeControl(this.policy, input.timeControl ?? "standard")
 
-    const positionCommand = this.#buildPositionCommand(input)
-    await this.#write("ucinewgame")
-    await this.#write("isready")
-    await this.#waitFor(
-      (line) => line === "readyok",
-      this.#readyTimeoutMs,
-      "readyok",
-    )
-    await this.#write(positionCommand)
-
-    const latestByMultiPv = new Map<number, UciInfoLine>()
-    let bestMove = ""
-    let ponderMove: string | undefined
-    let nodes: number | undefined
-    let timeMs: number | undefined
-
-    await this.#write(`go depth ${depth}`)
-
     try {
-      await new Promise<void>((resolve, reject) => {
-        const timer = setTimeout(() => {
-          void this.#killProcess()
-          reject(
-            new EngineTimeoutError(
-              `Engine search timed out after ${this.#searchTimeoutMs}ms (depth ${depth})`,
-            ),
-          )
-        }, this.#searchTimeoutMs)
+      const positionCommand = this.#buildPositionCommand(input)
+      await this.#write("ucinewgame")
+      await this.#write("isready")
+      await this.#waitFor(
+        (line) => line === "readyok",
+        this.#readyTimeoutMs,
+        "readyok",
+      )
+      await this.#write(positionCommand)
 
-        const onLine = (line: string) => {
-          const info = parseUciInfoLine(line)
-          if (info?.multiPv !== undefined && info.score && info.pv) {
-            latestByMultiPv.set(info.multiPv, info)
-            if (info.nodes !== undefined) nodes = info.nodes
-            if (info.timeMs !== undefined) timeMs = info.timeMs
+      const latestByMultiPv = new Map<number, UciInfoLine>()
+      let bestMove = ""
+      let ponderMove: string | undefined
+      let nodes: number | undefined
+      let timeMs: number | undefined
+
+      await this.#write(`go depth ${depth}`)
+
+      try {
+        await new Promise<void>((resolve, reject) => {
+          const timer = setTimeout(() => {
+            void this.#killProcess()
+            reject(
+              new EngineTimeoutError(
+                `Engine search timed out after ${this.#searchTimeoutMs}ms (depth ${depth})`,
+              ),
+            )
+          }, this.#searchTimeoutMs)
+
+          const onLine = (line: string) => {
+            const info = parseUciInfoLine(line)
+            if (info?.multiPv !== undefined && info.score && info.pv) {
+              latestByMultiPv.set(info.multiPv, info)
+              if (info.nodes !== undefined) nodes = info.nodes
+              if (info.timeMs !== undefined) timeMs = info.timeMs
+            }
+
+            const best = parseUciBestMoveLine(line)
+            if (!best) return
+
+            clearTimeout(timer)
+            this.#unsubscribe(onLine)
+            bestMove = best.bestMove
+            ponderMove = best.ponderMove
+            resolve()
           }
 
-          const best = parseUciBestMoveLine(line)
-          if (!best) return
+          this.#subscribe(onLine)
+        })
+      } finally {
+        this.#lineListeners.clear()
+      }
 
-          clearTimeout(timer)
-          this.#unsubscribe(onLine)
-          bestMove = best.bestMove
-          ponderMove = best.ponderMove
-          resolve()
-        }
+      if (!bestMove || bestMove === "(none)") {
+        throw new EngineCrashError("Engine returned no bestmove")
+      }
 
-        this.#subscribe(onLine)
+      const lines: UciPvLine[] = [...latestByMultiPv.entries()]
+        .sort(([a], [b]) => a - b)
+        .map(([multiPv, info]) => {
+          if (!info.score || !info.pv) {
+            throw new EngineCrashError(`Incomplete MultiPV line ${multiPv}`)
+          }
+          return {
+            multiPv,
+            depth: info.depth ?? depth,
+            score: info.score,
+            pv: info.pv,
+            ...(info.nodes !== undefined ? { nodes: info.nodes } : {}),
+            ...(info.timeMs !== undefined ? { timeMs: info.timeMs } : {}),
+          }
+        })
+
+      const durationMs = Date.now() - started
+      this.#metrics.observeDurationMs(
+        METRIC_NAMES.engineSearchDurationMs,
+        durationMs,
+      )
+      this.#metrics.increment(METRIC_NAMES.engineSearchTotal)
+      this.#logger.info("engine_search_complete", {
+        ...(this.#requestId ? { requestId: this.#requestId } : {}),
+        policyId: this.policy.id,
+        depth,
+        multiPv: this.policy.multiPv,
+        durationMs,
+        bestMove,
       })
-    } finally {
-      this.#lineListeners.clear()
-    }
 
-    if (!bestMove || bestMove === "(none)") {
-      throw new EngineCrashError("Engine returned no bestmove")
-    }
-
-    const lines: UciPvLine[] = [...latestByMultiPv.entries()]
-      .sort(([a], [b]) => a - b)
-      .map(([multiPv, info]) => {
-        if (!info.score || !info.pv) {
-          throw new EngineCrashError(`Incomplete MultiPV line ${multiPv}`)
-        }
-        return {
-          multiPv,
-          depth: info.depth ?? depth,
-          score: info.score,
-          pv: info.pv,
-          ...(info.nodes !== undefined ? { nodes: info.nodes } : {}),
-          ...(info.timeMs !== undefined ? { timeMs: info.timeMs } : {}),
-        }
+      return {
+        policyId: this.policy.id,
+        depth,
+        multiPv: this.policy.multiPv,
+        threads: this.policy.threads,
+        hashMb: this.policy.hashMb,
+        bestMove,
+        ...(ponderMove !== undefined ? { ponderMove } : {}),
+        lines,
+        ...(nodes !== undefined ? { nodes } : {}),
+        ...(timeMs !== undefined ? { timeMs } : {}),
+      }
+    } catch (error) {
+      const durationMs = Date.now() - started
+      this.#metrics.observeDurationMs(
+        METRIC_NAMES.engineSearchDurationMs,
+        durationMs,
+      )
+      this.#metrics.increment(METRIC_NAMES.engineSearchErrorsTotal)
+      this.#logger.error("engine_search_failed", {
+        ...(this.#requestId ? { requestId: this.#requestId } : {}),
+        policyId: this.policy.id,
+        depth,
+        durationMs,
+        error: error instanceof Error ? error.message : "Engine search failed",
       })
-
-    return {
-      policyId: this.policy.id,
-      depth,
-      multiPv: this.policy.multiPv,
-      threads: this.policy.threads,
-      hashMb: this.policy.hashMb,
-      bestMove,
-      ...(ponderMove !== undefined ? { ponderMove } : {}),
-      lines,
-      ...(nodes !== undefined ? { nodes } : {}),
-      ...(timeMs !== undefined ? { timeMs } : {}),
+      throw error
     }
   }
 

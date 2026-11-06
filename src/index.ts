@@ -93,5 +93,19 @@ export {
   type ParseAnalysisResultV1Result,
 } from "./result/index.js"
 
+export {
+  createLogger,
+  createMetricsRegistry,
+  METRIC_NAMES,
+  rootLogger,
+  rootMetrics,
+  type CreateLoggerOptions,
+  type LogFields,
+  type LogLevel,
+  type MetricsRegistry,
+  type MetricsSnapshot,
+  type StructuredLogger,
+} from "./observability/index.js"
+
 export const ANALYZER_PACKAGE_NAME = "@axiomchess/analyzer" as const
 export const ANALYZER_PACKAGE_VERSION = "0.1.0" as const
