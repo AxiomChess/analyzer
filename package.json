@@ -29,7 +29,8 @@
     "lint": "eslint . && tsc -p tsconfig.json --noEmit --pretty false",
     "test": "vitest run",
     "typecheck": "tsc -p tsconfig.json --noEmit --pretty false",
-    "engine:download": "node scripts/download-stockfish.mjs"
+    "engine:download": "node scripts/download-stockfish.mjs",
+    "acceptance:v1": "node scripts/run-acceptance-v1.mjs"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
