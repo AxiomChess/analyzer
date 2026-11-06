@@ -1,7 +1,6 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/AxiomChess/design/main/assets/brand/banner.svg" alt="AxiomChess" width="880" />
+  <img src="https://raw.githubusercontent.com/AxiomChess/design/main/assets/brand/banner.svg" alt="AxiomChess" width="920" />
 </p>
-
 # analyzer
 
 Stockfish workers, feature extraction, calibrated scoring library, and analysis JSON schema for AxiomChess.
